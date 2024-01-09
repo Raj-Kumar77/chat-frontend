@@ -43,7 +43,7 @@ const Login = () => {
             },
           };
           const { data } = await axios.post(
-            "/api/user/login",
+            "https://chat-backend-rust.vercel.app/api/user/login",
             { email, password },
             config
           );

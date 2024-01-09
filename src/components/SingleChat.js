@@ -21,7 +21,7 @@ import animationData from '../animations/typing.json'
 
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://chat-backend-rust.vercel.app";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -58,7 +58,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chat-backend-rust.vercel.app/api/message/${selectedChat._id}`,
         config
       );
       console.log(data);
@@ -123,7 +123,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://chat-backend-rust.vercel.app/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,
